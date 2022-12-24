@@ -18,16 +18,16 @@ mongoose
 
 // POSTS REQUEST
 
-app.get("/posts", getAllPosts);
+app.get("/", getAllPosts);
 app.post("/create", createPost);
-app.get("/posts", getPosts);
+app.get("/", getPosts);
 app.delete("/delete/:id", deletePost);
 app.put("/update/:id", updatePost);
 
 // USERS REQUEST
-app.get("/users", getAllUSers);
+app.get("/", getAllUSers);
 app.post("/register", createUser);
-app.get("/users", getUsers);
+app.get("/", getUsers);
 app.put("/change/:id", updateUser);
   
 
