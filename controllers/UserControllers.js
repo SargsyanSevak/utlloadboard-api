@@ -1,7 +1,7 @@
 import User from "../models/User.js"
 
-export const getAllUSers = (req, res) => {
-    const data =  User.find()
+export const getAllUSers = async (req, res) => {
+    const data = await User.find()
          .then(items=>res.json(items))
          .catch(err=>console.log(err))
    res.send(data);

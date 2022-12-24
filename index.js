@@ -7,7 +7,7 @@ import { getAllUSers,createUser,getUsers,updateUser } from './controllers/UserCo
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 const URI = 'mongodb+srv://sevak555:1122334455@cluster0.hoet41f.mongodb.net/loadboard?retryWrites=true&w=majority'
@@ -20,14 +20,14 @@ mongoose
 
 app.get("/", getAllPosts);
 app.post("/create", createPost);
-app.get("/", getPosts);
+app.get("/posts", getPosts);
 app.delete("/delete/:id", deletePost);
 app.put("/update/:id", updatePost);
 
 // USERS REQUEST
 app.get("/", getAllUSers);
 app.post("/register", createUser);
-app.get("/", getUsers);
+app.get("/users", getUsers);
 app.put("/change/:id", updateUser);
   
 
